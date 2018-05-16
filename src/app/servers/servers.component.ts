@@ -20,8 +20,24 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class ServersComponent implements OnInit {
+  btnEnabled = false;
+  countDown = 5;
+  hiddenEnabled = false;
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.btnEnabled = true;
+      this.hiddenEnabled = true;
+    }, 5000);
+
+    setInterval(() => {
+      /*if (this.countDown > 0) {
+        this.countDown -= 1;
+      }*/
+      this.countDown = (this.countDown > 0) ? this.countDown - 1 : 0;
+    }, 1000);
+
+  }
 
   ngOnInit() {
   }

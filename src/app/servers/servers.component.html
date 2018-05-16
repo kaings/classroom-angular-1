@@ -3,3 +3,11 @@
   <app-server></app-server>
   <app-server></app-server>
 </p>
+
+<!-- static hard code way
+<button class="btn btn-lg btn-primary" disabled>Restart Server</button>
+-->
+
+<!-- dynamic databinding way -- using property binding -->
+<button class="btn btn-lg btn-primary" [disabled]="!btnEnabled">Restart Server</button>
+<span [hidden]="hiddenEnabled">you can restart server in {{ countDown }}</span>
