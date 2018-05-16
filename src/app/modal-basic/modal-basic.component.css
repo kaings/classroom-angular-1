@@ -1,0 +1,14 @@
+button {
+  background-color: transparent;
+  color: darkblue;
+}
+
+button:hover{
+  background-color: darkred;
+  transition: all linear 0.5s;
+}
+
+.btn-outline-primary {
+  border: 1px orangered solid;
+  border-radius: 8px;
+}

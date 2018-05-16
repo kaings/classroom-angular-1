@@ -1,0 +1,42 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr>
+
+<pre>{{closeResult}}</pre>
+Anchor link to: component
+
+<div class="jumbotron container" style="background-color: black; border-radius: 5px;">
+  <pre style="color:darkred;">
+&#60;ng-template #content let-c="close" let-d="dismiss"&#62;
+  &#60;div class="modal-header"&#62;
+    &#60;h4 class="modal-title"&#62;Modal title&#60;/h4&#62;
+    &#60;button type="button" class="close" aria-label="Close" (click)="d('Cross click')"&#62;
+      &#60;span aria-hidden="true"&#62;&times;&#60;/span&#62;
+    &#60;/button&#62;
+  &#60;/div&#62;
+  &#60;div class="modal-body"&#62;
+    &#60;p&#62;One fine body&hellip;&#60;/p&#62;
+  &#60;/div&#62;
+  &#60;div class="modal-footer"&#62;
+    &#60;button type="button" class="btn btn-outline-dark" (click)="c('Close click')"&#62;Close&#60;/button&#62;
+  &#60;/div&#62;
+&#60;/ng-template&#62;
+
+&#60;button class="btn btn-lg btn-outline-primary" (click)="open(content)"&#62;Launch demo modal&#60;/button&#62;
+  </pre>
+</div>
