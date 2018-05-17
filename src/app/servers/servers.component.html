@@ -9,5 +9,9 @@
 -->
 
 <!-- dynamic databinding way -- using property binding -->
-<button class="btn btn-lg btn-primary" [disabled]="!btnEnabled">Restart Server</button>
+<input type="text" class="form-control" (input)="onServerNameInput($event)" />
+<button class="btn btn-lg btn-primary" [disabled]="!btnEnabled" (click)="onRestartServer()">Restart Server</button>
 <span [hidden]="hiddenEnabled">you can restart server in {{ countDown }}</span>
+<p [innerHTML]="'restart server in ' + countDown" [hidden]="hiddenEnabled"></p>
+<p>{{ restartServer }}</p>
+<p>{{ serverNameInput }}</p>

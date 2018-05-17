@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+button:hover {
+  background-color: darkred !important;
+  transition: all linear 2s;
+}
+
+.form-control {
+  display: inline;
+  width: 200px;
+}

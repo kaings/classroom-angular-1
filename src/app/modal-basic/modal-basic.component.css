@@ -1,12 +1,9 @@
 button {
   background-color: transparent;
   color: darkblue;
+  box-shadow: 1px 5px 10px #2b1d0e;
 }
 
-button:hover{
-  background-color: darkred;
-  transition: all linear 0.5s;
-}
 
 .btn-outline-primary {
   border: 1px orangered solid;

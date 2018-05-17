@@ -23,6 +23,8 @@ export class ServersComponent implements OnInit {
   btnEnabled = false;
   countDown = 5;
   hiddenEnabled = false;
+  restartServer = 'No Server is Running...';
+  serverNameInput = '';
 
   constructor() {
     setTimeout(() => {
@@ -40,6 +42,19 @@ export class ServersComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onRestartServer () {
+    this.restartServer = 'Server is Running...';
+  }
+
+  onServerNameInput(event: Event) {
+    // console.log(event);
+    this.serverNameInput = (<HTMLInputElement>event.target).value;
+
+    /* -- if event: any, the following line also works
+    this.serverNameInput = event.target.value;
+    */
   }
 
 }
