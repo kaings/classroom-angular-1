@@ -24,7 +24,7 @@ export class ServersComponent implements OnInit {
   countDown = 5;
   hiddenEnabled = false;
   restartServer = 'No Server is Running...';
-  serverNameInput = '';
+  serverNameInput = 'Some Input Here';
 
   constructor() {
     setTimeout(() => {

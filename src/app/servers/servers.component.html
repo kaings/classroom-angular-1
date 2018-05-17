@@ -4,14 +4,38 @@
   <app-server></app-server>
 </p>
 
-<!-- static hard code way
-<button class="btn btn-lg btn-primary" disabled>Restart Server</button>
--->
 
-<!-- dynamic databinding way -- using property binding -->
-<input type="text" class="form-control" (input)="onServerNameInput($event)" />
-<button class="btn btn-lg btn-primary" [disabled]="!btnEnabled" (click)="onRestartServer()">Restart Server</button>
-<span [hidden]="hiddenEnabled">you can restart server in {{ countDown }}</span>
-<p [innerHTML]="'restart server in ' + countDown" [hidden]="hiddenEnabled"></p>
-<p>{{ restartServer }}</p>
-<p>{{ serverNameInput }}</p>
+<div class="container">
+  <p class="text-center font-weight-bold"> -- Data Binding -- </p>
+  <!-- static hard code way
+  <button class="btn btn-lg btn-primary" disabled>Restart Server</button>
+  -->
+  <!--
+  Data Binding:
+  - String interpolation/ property binding ... modify DOM property by using .ts file variable (value)
+  - Event binding ... modify .ts file variable (value) by using event (event-binding)
+  - 2-way data binding (property + event) ... modify in 2 way, using .ts file variable to modify DOM property, and modify .ts file variable using event
+  -->
+
+  <!-- dynamic databinding way -- using property binding -->
+  <p><strong>Server Name (non-two-way data binding - event binding)</strong></p> <!-- not 2-way data binding: variable value is modified only by event (event-binding only) -- only change ts file variable value -->
+  <input type="text" class="form-control" (input)="onServerNameInput($event)" />
+
+  <p><strong>Server Name (two-way data binding - event + property binding)</strong></p> <!-- 2-way data binding: variable value is modified by event + property (event & property binding) -->
+  <!-- in order to use ngModel, we need to insert the following line into app.module.ts
+  import { FormsModule } from '@angular/forms';
+  imports: [
+      ...
+      FormsModule
+    ]
+  -->
+  <input type="text" class="form-control" [(ngModel)] = "serverNameInput" />
+
+
+
+  <button class="btn btn-lg btn-primary" [disabled]="!btnEnabled" (click)="onRestartServer()">Restart Server</button>
+  <span [hidden]="hiddenEnabled">you can restart server in {{ countDown }}</span>
+  <p [innerHTML]="'restart server in ' + countDown" [hidden]="hiddenEnabled"></p>
+  <p>{{ restartServer }}</p>
+  <p>{{ serverNameInput }}</p>
+</div>
