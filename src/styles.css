@@ -8,3 +8,8 @@ button:hover {
   display: inline;
   width: 200px;
 }
+
+.putborder {
+  border: 1px solid darkred;
+  border-radius: 8px;
+}

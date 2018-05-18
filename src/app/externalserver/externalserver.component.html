@@ -1,3 +1,10 @@
 <p>
   I am the ExternalServer
 </p>
+
+<div class="container putborder">
+  <h2 class="text-center"> -- Learning ngIf -- </h2>
+  <input type="text" (input)="onExternalServerInput($event)" (focus)="onFocusLetsClear()"/>
+  <button class="btn btn-primary" (click)="onCreateExternalServer()">Create External Server</button>
+  <p *ngIf="createExternalServer"><strong>created external server name : {{ externalServerInput }}</strong></p>
+</div>
