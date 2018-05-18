@@ -1,4 +1,12 @@
-<p>
-  This is the Server of the App
-  {{ 'Server running is' }} -- {{ serverId }} -- status is {{ serverStatus }}
-</p>
+<div [ngStyle]="{ backgroundColor: setServerStatusColor() }"
+[ngClass]="{
+online: serverStatus === 'Online',
+offline: serverStatus === 'Offline'}"
+>
+  <!-- or you can write >> [ngStyle]="{ 'background-color': getServerStatus() }" .
+  if inside the Javascript object, the property name has '-' dash, then put '' in between to make it valid JS object -->
+  <p>
+    This is the Server of the App
+    {{ 'Server running is' }} -- {{ serverId }} -- status is {{ serverStatus }}
+  </p>
+</div>
