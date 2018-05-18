@@ -26,6 +26,8 @@ export class ServersComponent implements OnInit {
   restartServer = 'No Server is Running...';
   serverNameInput = 'Some Input Here';
 
+  servers = ['server1', 'server2'];
+
   constructor() {
     setTimeout(() => {
       this.btnEnabled = true;
@@ -55,6 +57,10 @@ export class ServersComponent implements OnInit {
     /* -- if event: any, the following line also works
     this.serverNameInput = event.target.value;
     */
+  }
+
+  onAddNewServer() {
+    this.servers.push('New Server');
   }
 
 }

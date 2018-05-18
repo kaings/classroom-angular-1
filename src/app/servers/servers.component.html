@@ -41,3 +41,13 @@
   <p>{{ restartServer }}</p>
   <p>{{ serverNameInput }}</p>
 </div>
+
+<hr>
+
+<div class="container putborder">
+  <p class="text-center font-weight-bold"> -- ngFor -- </p>
+  <button class="btn btn-primary" (click)="onAddNewServer()">Add New Server</button><br/><br/>
+
+  <!-- ngFor does the repetition based on length of array, quite similar to angularJS ng-repeat -->
+  <app-server *ngFor="let anyVariable of servers"></app-server>
+</div>
