@@ -4,7 +4,17 @@
 
 <div class="container putborder">
   <h2 class="text-center"> -- Learning ngIf -- </h2>
-  <input type="text" (input)="onExternalServerInput($event)" (focus)="onFocusLetsClear()"/>
+  <input type="text" (input)="onExternalServerInput($event)" />
   <button class="btn btn-primary" (click)="onCreateExternalServer()">Create External Server</button>
+
+  <!-- if -->
+<!--
   <p *ngIf="createExternalServer"><strong>created external server name : {{ externalServerInput }}</strong></p>
+  -->
+
+  <!-- if else -->
+  <p *ngIf="createExternalServer; else noExternalServer"><strong>created external server name : {{ externalServerInput }}</strong></p>
+  <ng-template #noExternalServer>
+    <p>no external server is created ...</p>
+  </ng-template>
 </div>

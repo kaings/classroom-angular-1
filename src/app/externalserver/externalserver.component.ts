@@ -26,8 +26,4 @@ export class ExternalserverComponent {
     this.createExternalServer = true;
   }
 
-  onFocusLetsClear () {
-    this.createExternalServer = false;
-  }
-
 }
