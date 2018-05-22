@@ -28,6 +28,8 @@ export class ServersComponent implements OnInit {
 
   servers = ['server1', 'server2'];
 
+  initCount = 1;
+
   constructor() {
     setTimeout(() => {
       this.btnEnabled = true;
@@ -60,7 +62,11 @@ export class ServersComponent implements OnInit {
   }
 
   onAddNewServer() {
-    this.servers.push('New Server');
+    this.servers.push('New Server' + this.initCount++); // without this unique value of array, onRemoveServer will only remove item from the bottom.
+  }
+
+  onRemoveServer(id: number) {
+    this.servers.splice(id, 1);
   }
 
 }

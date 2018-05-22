@@ -49,5 +49,14 @@
   <button class="btn btn-primary" (click)="onAddNewServer()">Add New Server</button><br/><br/>
 
   <!-- ngFor does the repetition based on length of array, quite similar to angularJS ng-repeat -->
-  <app-server *ngFor="let anyVariable of servers"></app-server>
+  <!--  -->
+  <app-server *ngFor="let anyVariable of servers; let i = index" (click)="onRemoveServer(i)"></app-server>
+
+  <ul>
+    <a
+      style="cursor: pointer;"
+      *ngFor="let x of servers; let j = index" (click)="onRemoveServer(j)">
+      <li>{{ x }} - of - {{ j }}</li>
+    </a>
+  </ul>
 </div>
