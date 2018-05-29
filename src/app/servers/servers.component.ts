@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-servers',
-  /* selector: '[app-servers]', */ /* using selector as property */
-  /* selector: '.app-servers', */ /* using selector as class */
+  selector: 'app-servers',  /* using selector as element -- can also use camel case */
+  /* selector: '[app-servers]', */ /* using selector as property -- can also use camel case */
+  /* selector: '.app-servers', */ /* using selector as class -- can also use camel case */
   templateUrl: './servers.component.html',
   /* template: '<app-server></app-server>',*/ /* using inline method */
   /* template:
